@@ -10,9 +10,6 @@ const Footer = () => {
     email: '',
     message: '',
   });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
   const { name, email, message } = formData;
 
   const handleChangeInput = e => {
@@ -22,7 +19,11 @@ const Footer = () => {
   };
 
   const handleSubmit = () => {
-    setLoading(true);
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   return (
@@ -39,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="app__footer-form app__flex">
+      <form name="contact" method="POST" className="app__footer-form app__flex">
         <div className="app__flex">
           <input
             className="p-text"
@@ -69,10 +70,11 @@ const Footer = () => {
             onChange={handleChangeInput}
           />
         </div>
-        <button className="p-text" onClick={handleSubmit}>
-          {loading ? 'Sending...' : 'Send Messag'}e
+        <input type="hidden" name="form-name" value="contact" />
+        <button onSubmit={handleSubmit} className="p-text">
+          Send Message
         </button>
-      </div>
+      </form>
     </>
   );
 };
