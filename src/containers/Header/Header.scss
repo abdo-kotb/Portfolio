@@ -8,10 +8,6 @@
 
   .app__wrapper {
     padding: 0;
-
-    .copyright {
-      display: none;
-    }
   }
 }
 
@@ -92,6 +88,8 @@
 
   span {
     font-size: 2.5rem;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
 
     @media screen and (min-width: 2000px) {
       font-size: 5rem;
@@ -125,5 +123,29 @@
     object-fit: contain;
 
     z-index: 1;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
   }
 }

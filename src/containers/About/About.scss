@@ -1,0 +1,13 @@
+.app__about {
+  flex-direction: column;
+
+  &-text {
+    width: 100%;
+    padding: 1rem 0 0;
+
+    text-align: left;
+    font-size: 1.5rem;
+
+    color: var(--gray-color);
+  }
+}

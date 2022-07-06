@@ -30,7 +30,7 @@ const Work = () => {
       <h2 className="head-text">
         Check out my recent <span>projects</span>
       </h2>
-      <div className="app__work-filter">
+      <div className="app__work-filter app__flex">
         {['JS Frameworks', 'CSS Frameworks', 'JavaScript', 'CSS', 'All'].map(
           (item, i) => (
             <div
@@ -50,7 +50,7 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio app__flex"
       >
-        {WORKS.map((work, i) => (
+        {filteredWorks.map((work, i) => (
           <div className="app__work-item app__flex" key={i}>
             <div className="app__work-img app__flex">
               <img src={work.image} alt={work.name} />
@@ -96,6 +96,17 @@ const Work = () => {
             </div>
           </div>
         ))}
+        <p className="bold-text">
+          See more on my{' '}
+          <a
+            href="https://github.com/abdo-kotb"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>{' '}
+          profile
+        </p>
       </motion.div>
     </>
   );
