@@ -139,6 +139,10 @@
       color: var(--white-color);
     }
   }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 }
 
 .app__work-content {
@@ -162,5 +166,23 @@
     border-radius: 10px;
 
     background-color: #fff;
+  }
+}
+
+.app__work-phone {
+  width: 100%;
+  padding-top: 2rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  a {
+    color: var(--black-color);
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    display: none;
   }
 }
