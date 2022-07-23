@@ -22,6 +22,10 @@ import firebaseIcon from '../assets/firebase.png';
 import phpIcon from '../assets/php.png';
 import npmIcon from '../assets/npm.png';
 import apiIcon from '../assets/api.png';
+import nodeIcon from '../assets/nodejs.png';
+import mongodbIcon from '../assets/mongodb.png';
+import postmanIcon from '../assets/postman.png';
+// import apiIcon from '../assets/api.png';
 
 export const WORKS = [
   {
@@ -88,8 +92,20 @@ export const skills = [
     icon: reactIcon,
   },
   {
-    name: 'API',
+    name: 'NodeJS',
+    icon: nodeIcon,
+  },
+  {
+    name: 'MongoDB',
+    icon: mongodbIcon,
+  },
+  {
+    name: 'REST API',
     icon: apiIcon,
+  },
+  {
+    name: 'Postman API',
+    icon: postmanIcon,
   },
   {
     name: 'JavaScript',

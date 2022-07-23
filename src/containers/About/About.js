@@ -12,16 +12,19 @@ const About = () => {
         about <span>Myself</span>
       </h2>
       <p className="app__about-text" style={{ marginTop: 15 }}>
-        I'm a Web Developer located in UAE. I joined web development stack out
-        of passion for building web apps and interactive websites. I love
-        animations and creating dynamic user experiences.
+        I am a web developer based in the UAE. A passion for building
+        interactive websites and web apps motivated me to pursue a career in web
+        development. Animations and creating dynamic user experiences are two
+        things that I enjoy.
       </p>
       <p className="app__about-text">
-        Well-organized person, can work under pressure, and a problem solver.
+        An organized, team-oriented, capable problem solver, who works well in
+        team environments.
       </p>
       <p className="app__about-text">
-        I have a big experience in the Front-End spectrum, and I currently on my
-        way to learn the MERN stack and become a Full-Stack Web Developer.
+        I have a rich experience in both the Front-End and Back-End spectrums,
+        and as a well-versed MERN Full-Stack web developer, I provide a wide
+        range of services.
       </p>
     </>
   );
