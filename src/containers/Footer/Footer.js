@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+
+import emailjs from '@emailjs/browser';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import { AppWrap, MotionWrap } from '../../wrapper';
 
 import './Footer.scss';
 import emailImg from '../../assets/email.png';
 
 const Footer = () => {
+  const [loading, setLoading] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
+  const form = useRef();
   const { name, email, message } = formData;
 
   const handleChangeInput = e => {
@@ -18,12 +25,40 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+  const handleSubmit = e => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAIL_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAIL_PUBLIC_KEY
+      )
+      .then(
+        res => {
+          console.log(res.text);
+          setFormData({
+            name: '',
+            email: '',
+            message: '',
+          });
+          setLoading(false);
+          setAlertMessage(
+            "Your message has been successfully sent. We'll be in touch soon"
+          );
+          setTimeout(() => setAlertMessage(''), 3000);
+        },
+        err => {
+          console.log(err.text);
+          setLoading(false);
+          setAlertMessage(
+            'There was an error sending your message! Please try again.'
+          );
+          setTimeout(() => setAlertMessage(''), 3000);
+        }
+      );
   };
 
   return (
@@ -40,7 +75,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <form name="contact" method="POST" className="app__footer-form app__flex">
+      <form
+        ref={form}
+        onSubmit={handleSubmit}
+        className="app__footer-form app__flex"
+      >
         <div className="app__flex">
           <input
             className="p-text"
@@ -49,6 +88,7 @@ const Footer = () => {
             value={name}
             onChange={handleChangeInput}
             name="name"
+            required
           />
         </div>
         <div className="app__flex">
@@ -59,6 +99,7 @@ const Footer = () => {
             value={email}
             onChange={handleChangeInput}
             name="email"
+            required
           />
         </div>
         <div>
@@ -68,13 +109,24 @@ const Footer = () => {
             value={message}
             name="message"
             onChange={handleChangeInput}
+            required
           />
         </div>
-        <input type="hidden" name="form-name" value="contact" />
-        <button onSubmit={handleSubmit} className="p-text">
-          Send Message
+        <button disabled={loading} className="p-text">
+          {loading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
+      {alertMessage && (
+        <AnimatePresence inital={false}>
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.3 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            className="email-alert"
+          >
+            <p>{alertMessage}</p>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </>
   );
 };

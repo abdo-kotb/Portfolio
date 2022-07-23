@@ -25,7 +25,6 @@ import apiIcon from '../assets/api.png';
 import nodeIcon from '../assets/nodejs.png';
 import mongodbIcon from '../assets/mongodb.png';
 import postmanIcon from '../assets/postman.png';
-// import apiIcon from '../assets/api.png';
 
 export const WORKS = [
   {
