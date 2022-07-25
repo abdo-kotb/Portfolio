@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { BsInstagram, BsGithub } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
+import { BsGithub } from 'react-icons/bs';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 
 const SocialMedia = () => {
@@ -18,10 +18,7 @@ const SocialMedia = () => {
         </a>
       </div>
       <div>
-        <FaFacebookF />
-      </div>
-      <div>
-        <BsInstagram />
+        <FaLinkedinIn />
       </div>
     </div>
   );

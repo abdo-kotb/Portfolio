@@ -183,13 +183,14 @@
 }
 
 .dark .app__navbar-menu div {
-  background: none;
+  background-image: none;
 }
 
 .app__theme {
   background: none;
   outline: none;
   border: none;
+  cursor: pointer;
 
   font-size: 2rem;
 

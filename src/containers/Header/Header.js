@@ -3,10 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import './Header.scss';
-
-import HeaderImg from '../../assets/header.svg';
-// import HeaderImg2 from '../../assets/header.webp';
 import { AppWrap } from '../../wrapper';
+
+import HeaderImgDark from '../../assets/headerDark.webp';
+import HeaderImgLight from '../../assets/headerLight.webp';
+import ThemeContext from '../../contexts/ThemeContext';
 
 const Header = () => {
   return (
@@ -25,7 +26,7 @@ const Header = () => {
             </div>
           </div>
           <div className="tag-cmp app__flex">
-            <p className="p-text">Full-Stack Developer</p>
+            <p className="p-text">Full-Stack Web Developer</p>
           </div>
           <div className="tag-cmp app__flex">
             <p className="p-text">MERN-Stack Developer</p>
@@ -37,7 +38,14 @@ const Header = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__header-img"
       >
-        <img src={HeaderImg} alt="web developer" />
+        <ThemeContext.Consumer>
+          {({ theme }) => (
+            <img
+              src={theme === 'dark' ? HeaderImgDark : HeaderImgLight}
+              alt="web developer"
+            />
+          )}
+        </ThemeContext.Consumer>
       </motion.div>
     </header>
   );
