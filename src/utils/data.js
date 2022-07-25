@@ -25,6 +25,7 @@ import apiIcon from '../assets/api.png';
 import nodeIcon from '../assets/nodejs.png';
 import mongodbIcon from '../assets/mongodb.png';
 import postmanIcon from '../assets/postman.png';
+import pythonIcon from '../assets/python.png';
 
 export const WORKS = [
   {
@@ -99,6 +100,14 @@ export const skills = [
     icon: mongodbIcon,
   },
   {
+    name: 'Material UI',
+    icon: muiIcon,
+  },
+  {
+    name: 'Redux',
+    icon: reduxIcon,
+  },
+  {
     name: 'REST API',
     icon: apiIcon,
   },
@@ -115,14 +124,6 @@ export const skills = [
     icon: cssIcon,
   },
   {
-    name: 'Material UI',
-    icon: muiIcon,
-  },
-  {
-    name: 'Redux',
-    icon: reduxIcon,
-  },
-  {
     name: 'Sass',
     icon: sassIcon,
   },
@@ -137,6 +138,10 @@ export const skills = [
   {
     name: 'Tailwind CSS',
     icon: tailwindIcon,
+  },
+  {
+    name: 'Python',
+    icon: pythonIcon,
   },
   {
     name: 'C++',

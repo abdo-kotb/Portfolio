@@ -6,12 +6,17 @@
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.18);
 
   position: fixed;
   z-index: 2;
+}
+
+.dark .app__navbar {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.18);
 }
 
 .app__navbar-logo {
@@ -80,6 +85,10 @@
   }
 }
 
+.dark .app__navbar-links a {
+  color: var(--white-color);
+}
+
 .app__navbar-menu {
   width: 2.25rem;
   height: 2.25rem;
@@ -115,7 +124,7 @@
     flex-direction: column;
 
     background: url('../../assets/bgWhite.webp');
-    background-color: var(--white-color);
+    background-color: var(--lightbg-color);
     background-size: cover;
     background-repeat: repeat;
 
@@ -170,5 +179,24 @@
 
   @media screen and (min-width: 900px) {
     display: none;
+  }
+}
+
+.dark .app__navbar-menu div {
+  background: none;
+}
+
+.app__theme {
+  background: none;
+  outline: none;
+  border: none;
+
+  font-size: 2rem;
+
+  .sun {
+    color: #fdb813;
+  }
+  .moon {
+    color: #1f2631;
   }
 }

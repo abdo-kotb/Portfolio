@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import './Header.scss';
 
 import HeaderImg from '../../assets/header.svg';
+// import HeaderImg2 from '../../assets/header.webp';
 import { AppWrap } from '../../wrapper';
 
 const Header = () => {
